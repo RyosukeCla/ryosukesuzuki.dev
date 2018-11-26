@@ -13,6 +13,7 @@ class IndexPage extends React.Component {
     
     const svg = d3.select('#mytree')
       .style('opacity', '0')
+      .style('transition', 'opacity 1s')
       .style('width', '100%')
       .style('max-width', '650px')
       .style('height', 'auto')
@@ -85,7 +86,6 @@ class IndexPage extends React.Component {
       .attr('height', box.height)
       .attr('viewBox', `${box.x} ${box.y} ${box.width} ${box.height}`)
       .style('opacity', '1')
-
   }
 
   render() {
