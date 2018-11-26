@@ -5,3 +5,6 @@
  */
 
 // You can delete this file if you're not using it
+
+require('uikit/dist/css/uikit-core.min.css')
+require('uikit/dist/css/uikit.min.css')
