@@ -8,7 +8,7 @@ function injectDepth(node) {
       child.depth = injectDepth(child)
     })
     const depths = node.children.map(child => child.depth)
-    node.depth = Math.max(0, ...depths) + 1      
+    node.depth = Math.max(0, ...depths) + 1
     return node.depth
   } else {
     return node.depth
@@ -17,47 +17,23 @@ function injectDepth(node) {
 
 const web = n('web', [
   n('front', [
-    n('mvvm', [
-      n('react'),
-      n('vue'),
-    ]),
-    n('state', [
-      n('redux'),
-      n('flux'),
-    ]),
-    n('ssr', [
-      n('nuxt')
-    ]),
+    n('mvvm', [n('react'), n('vue')]),
+    n('state', [n('redux'), n('flux')]),
+    n('ssr', [n('nuxt')]),
   ]),
   n('server', [
-    n('nodejs', [
-      n('express'),
-      n('fastify'),
-      n('koa'),
-    ]),
-    n('php', [
-      n('cakephp'),
-      n('symfony'),
-    ])
+    n('nodejs', [n('express'), n('fastify'), n('koa')]),
+    n('php', [n('cakephp'), n('symfony')]),
   ]),
-  n('database', [
-    n('redis'),
-    n('mongo'),
-    n('mysql'),
-    n('bigtable'),
-  ]),
-  n('infrastructure', [
-    n('aws'),
-    n('gcp'),
-    n('heroku'),
-  ]),
+  n('database', [n('redis'), n('mongo'), n('mysql'), n('bigtable')]),
+  n('infrastructure', [n('aws'), n('gcp'), n('heroku')]),
   n('dev ops', [
     n('docker'),
     n('travisci'),
     n('circleci'),
     n('webpack'),
     n('agile'),
-    n('git')
+    n('git'),
   ]),
 ])
 
@@ -77,31 +53,14 @@ const language = n('language', [
   n('Php'),
 ])
 
-const tech = n('tech', [
-  web,
-  language
-])
+const tech = n('tech', [web, language])
 
 const machineLearning = n('machine learning', [
   n('deep net', [
-    n('gan', [
-      n('patch gan'),
-      n('cycle gan'),
-      n('deep prior')
-    ]),
-    n('convolutional nn', [
-      n('res net'),
-      n('dense net'),
-    ]),
-    n('auto encoder', [
-      n('unet'),
-      n('stacked ae'),
-      n('denoising ae'),
-    ]),
-    n('library', [
-      n('tensorflow'),
-      n('pytorch'),
-    ])
+    n('gan', [n('patch gan'), n('cycle gan'), n('deep prior')]),
+    n('convolutional nn', [n('res net'), n('dense net')]),
+    n('auto encoder', [n('unet'), n('stacked ae'), n('denoising ae')]),
+    n('library', [n('tensorflow'), n('pytorch')]),
   ]),
   n('reinforcement learning'),
   n('genetic algorithm'),
@@ -114,7 +73,7 @@ const machineLearning = n('machine learning', [
     n('segmentation'),
     n('image generation'),
     n('image translation'),
-  ])
+  ]),
 ])
 
 const sns = n('sns', [
@@ -128,9 +87,7 @@ const sns = n('sns', [
 const editor = n('editor', [
   n('atom'),
   n('vscode'),
-  n('theme', [
-    n('one dark')
-  ])
+  n('theme', [n('one dark')]),
 ])
 
 const tvSeries = n('tv series', [
@@ -158,20 +115,13 @@ const musician = n('musician', [
   n('shawn mendes'),
 ])
 
-const instrument = n('instrument', [
-  n('clarinet')
-])
+const instrument = n('instrument', [n('clarinet')])
 
-const tree = n('me', [
-  tech,
-  machineLearning,
-  sns,
-  musical,
-  editor,
-  tvSeries,
-  musician,
-  instrument
-], true)
+const tree = n(
+  'me',
+  [tech, machineLearning, sns, musical, editor, tvSeries, musician, instrument],
+  true
+)
 
 injectDepth(tree)
 
