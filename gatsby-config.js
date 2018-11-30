@@ -26,6 +26,16 @@ module.exports = {
         icon: 'src/images/r-logo.png', // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-98289041-3',
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Avoids sending pageview hits from custom paths
+        exclude: ['/svg/**'],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
