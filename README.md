@@ -1,18 +1,10 @@
-# ryosuke page
-## setup
-```
-$ git clone git@github.com:RyosukeCla/ryosuke-pages.git
-$ cd ryosuke-pages
-$ git clone git@github.com:RyosukeCla/RyosukeCla.github.io.git build
-$ yarn install
-```
+# [https://ryosukesuzuki.dev](https://ryosukesuzuki.dev)
+
+## Adding archives
+
+    node ./scripts/create_archive.js
 
 ## dev
-```
-$ yarn run start
-```
 
-## deploy to ryosuke.github.io
-```
-$ yarn run deploy
-```
+    yarn install
+    yarn run dev
