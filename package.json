@@ -8,8 +8,7 @@
     "next": "^12.0.10",
     "next-mdx-remote": "^3.0.8",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0"
+    "react-dom": "^17.0.2"
   },
   "keywords": [
     "gatsby"
@@ -19,15 +18,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "yarn run build; sh scripts/publish.sh"
+    "lint": "next lint"
   },
   "devDependencies": {
     "@types/node": "^17.0.17",
     "@types/react": "^17.0.39",
-    "@vanilla-extract/babel-plugin": "^1.1.4",
-    "@vanilla-extract/css": "^1.6.8",
-    "@vanilla-extract/next-plugin": "^2.0.1",
     "eslint": "^8.8.0",
     "eslint-config-next": "^12.0.10",
     "prettier": "^1.14.2",
