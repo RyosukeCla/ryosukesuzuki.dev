@@ -1,6 +1,6 @@
 # [https://ryosukesuzuki.dev](https://ryosukesuzuki.dev)
 
-## Adding archives
+## add an archive
 
     node ./scripts/create_archive.js
 
