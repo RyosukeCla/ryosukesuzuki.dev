@@ -12,6 +12,7 @@ const Icon = ({ src, href }: { src: string; href: string }) => {
   return <Link href={href}>
     <a>
       <Image
+        alt="icon"
         src={src}
         width="20"
         data-icon
@@ -32,7 +33,7 @@ const Home: NextPage = () => {
       </div>
       <h1 data-title>Hello</h1>
       <p>
-        I'm Ryosuke Suzuki, a software engineer in Tokyo.
+        I am Ryosuke Suzuki, a software engineer in Tokyo.
       </p>
       <div className={styles.links}>
         <Icon src={twitterSvg} href="https://twitter.com/GentleClarinet" />
