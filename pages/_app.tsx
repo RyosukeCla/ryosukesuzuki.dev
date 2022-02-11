@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Link>
         <div className={styles.space} />
         <Link href="/">
-          <a data-menu>About</a>
+          <a data-menu>Hello</a>
         </Link>
         <Link href="/archive">
           <a data-menu>Archive</a>
