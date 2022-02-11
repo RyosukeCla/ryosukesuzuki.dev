@@ -1,0 +1,31 @@
+.links {
+  margin: 16px 0;
+  margin-top: 32px;
+}
+.links > * {
+  margin-right: 8px;
+}
+
+.hero {
+  width: 100%;
+  width: calc(100% + 32px);
+  margin: 0 -16px;
+}
+.hero > span {
+  position: unset !important;
+}
+.hero img {
+  filter: contrast(115%) grayscale(90%) saturate(190%);
+  max-height: 300px !important;
+  object-fit: cover;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 720px) {
+  .hero img {
+    border-radius: 0;
+  }
+}

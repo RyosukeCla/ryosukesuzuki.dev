@@ -1,18 +1,18 @@
 # ryosuke page
 ## setup
 ```
-$ git clone https://github.com/RyosukeCla/ryosuke-pages.git
+$ git clone git@github.com:RyosukeCla/ryosuke-pages.git
 $ cd ryosuke-pages
-$ git clone https://github.com/RyosukeCla/RyosukeCla.github.io.git public
-$ npm i
+$ git clone git@github.com:RyosukeCla/RyosukeCla.github.io.git build
+$ yarn install
 ```
 
 ## dev
 ```
-$ npm run start
+$ yarn run start
 ```
 
 ## deploy to ryosuke.github.io
 ```
-$ npm run deploy
+$ yarn run deploy
 ```

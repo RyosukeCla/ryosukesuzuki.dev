@@ -1,0 +1,10 @@
+.datetime {
+  color: #5a5a5a;
+  line-height: 12px;
+}
+
+.listitem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}

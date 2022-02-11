@@ -1,0 +1,27 @@
+.container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 720px;
+  min-width: 380px;
+}
+
+.header {
+  display: flex;
+}
+
+.header .space {
+  flex-grow: 1;
+}
+
+.header a {
+  padding: 16px;
+}
+
+.body {
+  padding: 0 16px;
+}
+
+.footer {
+  padding: 16px;
+  color: #5a5a5a;
+}

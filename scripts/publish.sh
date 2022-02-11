@@ -1,4 +1,4 @@
-cd public;
+cd build;
 git add -A;
 now=$(date -R);
 comment="deploy ${now}";
