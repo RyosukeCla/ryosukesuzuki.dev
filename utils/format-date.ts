@@ -3,7 +3,7 @@ export function formatDate(dateStr: string) {
     year: 'numeric',
     month: 'short',
     day: '2-digit',
-    timeZone: 'UST',
+    timeZone: 'PST8PDT',
     timeZoneName: 'short',
   });
 
