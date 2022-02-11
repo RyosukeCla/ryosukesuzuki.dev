@@ -8,7 +8,7 @@ import { formatDate } from '../../utils/format-date';
 const DOC_FILE_PATH = path.join(process.cwd(), './archives/');
 const DOC_FILE_PATHS = fs
   .readdirSync(DOC_FILE_PATH)
-  .filter((path) => /\.mdx?$/.test(path));
+  .filter((path) => /\.mdx?$/.test(path)).reverse();
 
 type Doc = { title: string; pubtime: string, slug: string };
 type Props = {
