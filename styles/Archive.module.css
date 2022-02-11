@@ -10,18 +10,18 @@
 }
 
 .image {
+  position: relative;
   width: 100%;
-  width: calc(100%);
-  margin: 0
+  margin: 0;
 }
 .image > span {
   position: unset !important;
 }
 .image img {
+  border-radius: 4px;
   object-fit: cover;
   width: 100% !important;
   position: relative !important;
   height: unset !important;
-  border-radius: 4px;
   transition: height 0.3s;
 }

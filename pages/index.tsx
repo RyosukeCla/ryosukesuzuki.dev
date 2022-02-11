@@ -13,7 +13,7 @@ const Icon = ({ src, href }: { src: string; href: string }) => {
   return (
     <Link href={href}>
       <a>
-        <Image alt="icon" src={src} width="20" data-icon />
+        <Image alt="icon" src={src} width="32" data-icon />
       </a>
     </Link>
   );

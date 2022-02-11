@@ -9,26 +9,22 @@
 .hero {
   width: 100%;
   width: calc(100% + 32px);
+  height: 300px !important;
   margin: 0 -16px;
-}
-.hero > span {
-  position: unset !important;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--main-bg-color);
 }
 .hero img {
-  max-height: 300px !important;
   object-fit: cover;
-  width: 100% !important;
-  position: relative !important;
-  height: unset !important;
-  border-radius: 4px;
-  transition: height 0.3s;
 }
-.hero[data-filter] img {
+.hero[data-filter] {
   filter: contrast(115%) grayscale(90%) saturate(190%);
 }
 
 @media screen and (max-width: 720px) {
-  .hero img {
+  .hero {
     border-radius: 0;
   }
 }

@@ -7,6 +7,7 @@ export const Hero = ({ src, alt, loading='eager', filter }: { src: string | Stat
     <Image
       src={src}
       layout="fill"
+      objectFit="cover"
       loading={loading}
       alt={alt}
     />
