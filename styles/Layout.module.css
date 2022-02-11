@@ -19,9 +19,10 @@
 
 .body {
   padding: 0 16px;
+  overflow: hidden;
 }
 
 .footer {
   padding: 16px;
-  color: #5a5a5a;
+  color: var(--main-subdue-color);
 }

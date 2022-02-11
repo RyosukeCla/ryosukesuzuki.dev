@@ -1,30 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import "./one-dark.css";
+
+:root {
+  --main-bg-color: #FFF;
+  --main-text-color: rgb(43, 43, 43);
+  --main-subdue-color: #5a5a5a;
+
+  --main-link-color: #446cd1;
+
+  --main-code-bg-color: hsl(220, 13%, 18%);
+  --main-code-color: hsl(220, 14%, 90%);
+
+  --main-font-family: 'Outfit', sans-serif;
+  --main-pre-font-family: 'Source Code Pro';
+}
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Outfit', sans-serif;
-  color: rgb(43, 43, 43);
+  font-family: var(--main-font-family);
+  color: var(--main-text-color);
   font-size: 18px;
-  background: #FFF;
+  background: var(--main-bg-color);
 }
 
 a {
-  color: rgb(73, 73, 73);
+  color: var(--main-link-color);
   transition: all 0.1s ease-in-out;
   text-decoration: none;
 }
 a[data-header] {
-  color: rgb(43, 43, 43);
+  color: var(--main-text-color);
 }
 a[data-menu] {
-  color: rgb(73, 73, 73);
-  /* color: #494949; */
-  /* color: #446cd1; */
+  color: var(--main-text-color);
 }
 a:hover {
   opacity: 0.6;
+}
+
+p, h1, h2, h3, h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+pre {
+  overflow-x: scroll;
+  padding: 16px;
+  border-radius: 4px;
+}
+code {
+  font-family: var(--main-pre-font-family);
+  background: var(--main-code-bg-color);
+  color: var(--main-code-color);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+pre > code {
+  font-size: 16px;
+  line-height: 16px;
 }
 
 h1 {

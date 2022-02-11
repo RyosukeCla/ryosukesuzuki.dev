@@ -1,5 +1,5 @@
 .datetime {
-  color: #5a5a5a;
+  color: var(--main-subdue-color);
   line-height: 12px;
 }
 
@@ -7,4 +7,21 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
+}
+
+.image {
+  width: 100%;
+  width: calc(100%);
+  margin: 0
+}
+.image > span {
+  position: unset !important;
+}
+.image img {
+  object-fit: cover;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+  border-radius: 4px;
+  transition: height 0.3s;
 }

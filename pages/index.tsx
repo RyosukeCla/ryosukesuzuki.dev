@@ -7,6 +7,7 @@ import twitterSvg from '../public/svg/twitter.svg';
 import githubSvg from '../public/svg/github.svg';
 import facebookSvg from '../public/svg/facebook.svg';
 import heroImg from '../public/images/hero.jpg';
+import { Hero } from '../components/hero';
 
 const Icon = ({ src, href }: { src: string; href: string }) => {
   return (
@@ -20,15 +21,13 @@ const Icon = ({ src, href }: { src: string; href: string }) => {
 const Home: NextPage = () => {
   return (
     <div>
-      <div className={styles.hero}>
-        <Image
-          src={heroImg}
-          layout="fill"
-          loading="eager"
-          alt="Me at Fusimi Inari, Kyoto"
-        />
-      </div>
-      <h1 data-title>Hello</h1>
+      <Hero
+        src={heroImg}
+        alt="Me at Fusimi Inari, Kyoto"
+        loading="eager"
+        filter
+      />
+      <h1 data-title>Hello!</h1>
       <p>I am Ryosuke Suzuki, a software engineer in Tokyo.</p>
       <div className={styles.links}>
         <Icon src={twitterSvg} href="https://twitter.com/GentleClarinet" />

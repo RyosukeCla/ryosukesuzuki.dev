@@ -15,13 +15,16 @@
   position: unset !important;
 }
 .hero img {
-  filter: contrast(115%) grayscale(90%) saturate(190%);
   max-height: 300px !important;
   object-fit: cover;
   width: 100% !important;
   position: relative !important;
   height: unset !important;
   border-radius: 4px;
+  transition: height 0.3s;
+}
+.hero[data-filter] img {
+  filter: contrast(115%) grayscale(90%) saturate(190%);
 }
 
 @media screen and (max-width: 720px) {
