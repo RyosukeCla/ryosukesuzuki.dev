@@ -10,6 +10,7 @@ import { formatDate } from '../../utils/format-date';
 import { useEffect } from 'react';
 import Prism from 'prismjs';
 import { Hero } from '../../components/hero';
+import Link from 'next/link';
 
 const DOC_FILE_PATH = path.join(process.cwd(), './archives/');
 const DOC_FILE_PATHS = fs
@@ -64,6 +65,9 @@ export default function Page({ source, frontMatter }: PageProps) {
         />
       }
       <h1 data-title>
+        <div className={styles.goback}>
+          <Link href="/archive"><a><small>cd ../</small></a></Link>
+        </div>
         {frontMatter.title}
         <div className={styles.datetime}>
           <small>{formatDate(frontMatter.pubtime)}</small>

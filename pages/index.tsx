@@ -8,17 +8,18 @@ import githubSvg from '../public/svg/github.svg';
 import facebookSvg from '../public/svg/facebook.svg';
 import heroImg from '../public/images/hero.jpg';
 import { Hero } from '../components/hero';
+import { getStaticProps as getArchiveStatiProps, Props, Docs } from './archive/index';
 
 const Icon = ({ src, href }: { src: string; href: string }) => {
   return (
     <Link href={href}>
       <a>
-        <Image alt="icon" src={src} width="32" height="32" data-icon />
+        <Image alt="icon" src={src} width="24" height="24" data-icon />
       </a>
     </Link>
   );
 };
-const Home: NextPage = () => {
+const Home = (props: Props & { hasMore: boolean }) => {
   return (
     <div>
       <Hero
@@ -28,14 +29,34 @@ const Home: NextPage = () => {
         filter
       />
       <h1 data-title>Hello!</h1>
-      <p>I am Ryosuke Suzuki, a software engineer in Tokyo.</p>
+      <p>I&apos;m Ryosuke Suzuki, a software engineer in Tokyo, preferring to work at a startup, enjoying singing.</p>
+
+      <h4>Recently</h4>
+      <Docs docs={props.docs}/>
+      {props.hasMore && <Link href="/archive">
+        <a data-menu>...more</a>
+      </Link>}
+
+      <br />
       <div className={styles.links}>
         <Icon src={twitterSvg} href="https://twitter.com/GentleClarinet" />
         <Icon src={githubSvg} href="https://github.com/RyosukeCla" />
         <Icon src={facebookSvg} href="https://www.facebook.com/ryosuke0907" />
       </div>
+
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const data = await getArchiveStatiProps();
+  const MAX = 3;
+  return {
+    props: {
+      docs: data.props.docs.slice(0, MAX),
+      hasMore: data.props.docs.length > MAX,
+    }
+  }
+}
 
 export default Home;

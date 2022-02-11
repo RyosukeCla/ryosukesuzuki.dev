@@ -1,9 +1,5 @@
-.links {
-  margin: 16px 0;
-  margin-top: 32px;
-}
 .links > * {
-  margin-right: 8px;
+  margin-right: 16px;
 }
 
 .hero {

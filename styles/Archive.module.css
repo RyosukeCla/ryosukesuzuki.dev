@@ -2,11 +2,20 @@
   color: var(--main-subdue-color);
   line-height: 12px;
 }
-
+.goback {
+  line-height: 12px;
+  margin-bottom: 3px;
+  font-family: var(--main-pre-font-family);
+}
+.goback > a {
+  text-decoration: none;
+}
 .listitem {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
+  color: var(--main-text-color);
+  text-decoration: none;
 }
 
 .image {

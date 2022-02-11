@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 @import "./one-dark.css";
 
 :root {
   --main-bg-color: #FFF;
   --main-text-color: rgb(43, 43, 43);
-  --main-subdue-color: #5a5a5a;
+  --main-subdue-color: #6b6b6b;
 
-  --main-link-color: #446cd1;
+  --main-link-color: rgb(43, 43, 43);
 
   --main-code-bg-color: hsl(220, 13%, 18%);
   --main-code-color: hsl(220, 14%, 90%);
@@ -29,21 +29,27 @@ body {
 a {
   color: var(--main-link-color);
   transition: all 0.1s ease-in-out;
-  text-decoration: none;
 }
 a[data-header] {
   color: var(--main-text-color);
+  text-decoration: none;
 }
 a[data-menu] {
   color: var(--main-text-color);
+  text-decoration: none;
 }
 a:hover {
   opacity: 0.6;
 }
 
-p, h1, h2, h3, h4 {
+p, h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 32px;
+  margin-bottom: 16px;
 }
 
 pre {
@@ -68,15 +74,19 @@ h1 {
   font-size: 32px;
 }
 h1[data-title] {
-  padding: 16px 0;
+  margin: 32px 0;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 24px;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 20px;
+}
+
+h4, h5, h6 {
+  font-size: 18px;
 }
 
 small {

@@ -10,26 +10,29 @@ const DOC_FILE_PATHS = fs
   .readdirSync(DOC_FILE_PATH)
   .filter((path) => /\.mdx?$/.test(path)).reverse();
 
+export const Docs = ({ docs }: { docs: Doc[] }) => {
+  return <div className={styles.list}>
+    {docs.map((doc, key) => {
+      return <Link key={key} href={`/archive/${doc.slug}`}>
+          <a className={styles.listitem}>
+            <span>{doc.title}</span>
+            <div className={styles.datetime}>
+              <small>{formatDate(doc.pubtime)}</small>
+            </div>
+          </a>
+        </Link>
+    })}
+  </div>
+}
 type Doc = { title: string; pubtime: string, slug: string };
-type Props = {
+export type Props = {
   docs: Doc[];
 }
 export default function ArchiveListPage({ docs }: Props) {
   return (
     <div>
       <h1 data-title>Archive</h1>
-      <div className={styles.list}>
-        {docs.map((doc, key) => {
-          return <Link key={key} href={`/archive/${doc.slug}`}>
-              <a className={styles.listitem}>
-                <span>{doc.title}</span>
-                <div className={styles.datetime}>
-                  <small>{formatDate(doc.pubtime)}</small>
-                </div>
-              </a>
-            </Link>
-        })}
-      </div>
+      <Docs docs={docs} />
     </div>
   )
 }
