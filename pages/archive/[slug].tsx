@@ -86,6 +86,9 @@ export default function Page({ source, frontMatter }: PageProps) {
         </div>
       </h1>
       <MDXRemote {...source} components={MD_COMPONENTS} />
+      <div className={styles.goback}>
+        <Link href="/archive"><a><small>cd ../</small></a></Link>
+      </div>
     </div>
   )
 }
