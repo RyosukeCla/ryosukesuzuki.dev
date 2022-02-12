@@ -3,8 +3,10 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import styles from '../styles/Layout.module.css';
 import Link from 'next/link';
+import { HeadForSEO } from '../components/seo';
+import { getFullUrl } from '../utils/url';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -19,11 +21,15 @@ function MyApp({ Component, pageProps }: AppProps) {
           <a data-menu>Archive</a>
         </Link>
       </header>
-      <Head>
-        <title>Ryosuke Suzuki</title>
-        <meta name="description" content="ryosuke suzuki" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <HeadForSEO
+        title="Ryosuke Suzuki"
+        description="Hello! I'm ryosuke suzuki, a software engineer in Tokyo."
+        type="website"
+        url={`${getFullUrl(router.pathname)}`}
+        imageUrl={getFullUrl('/images/ogp-default.png')}
+        width={1000}
+        height={508}
+      />
       <div className={styles.body}>
         <Component {...pageProps} />
       </div>

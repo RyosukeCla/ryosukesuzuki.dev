@@ -11,9 +11,12 @@ import { useEffect } from 'react';
 import Prism from 'prismjs';
 import { Hero } from '../../components/hero';
 import Link from 'next/link';
+import { generateOgpImage, Ogp } from '../../utils/generate-image';
+import { HeadForSEO } from '../../components/seo';
+import { getFullUrl } from '../../utils/url';
 
-const DOC_FILE_PATH = path.join(process.cwd(), './archives/');
-const DOC_FILE_PATHS = fs
+export const DOC_FILE_PATH = path.join(process.cwd(), './archives/');
+export const DOC_FILE_PATHS = fs
   .readdirSync(DOC_FILE_PATH)
   .filter((path) => /\.mdx?$/.test(path));
 
@@ -36,9 +39,12 @@ const MD_COMPONENTS = {
 type PageProps = {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
   frontMatter: {
+    slug: string;
     title: string;
     pubtime: string;
     hero: StaticImageData;
+    ogp: Ogp;
+    description: string;
   }
 }
 export default function Page({ source, frontMatter }: PageProps) {
@@ -47,15 +53,22 @@ export default function Page({ source, frontMatter }: PageProps) {
       await import('prismjs/components/prism-typescript' as string);
       await import('prismjs/components/prism-yaml' as string);
       await import('prismjs/components/prism-json' as string);
+      await import('prismjs/components/prism-bash' as string);
       Prism.highlightAll();
     }
     init();
   }, []);
   return (
     <div>
-      <Head>
-        <title>{frontMatter.title}</title>
-      </Head>
+      <HeadForSEO
+        title={`${frontMatter.title} | Ryosuke Suzuki`}
+        description={frontMatter.description}
+        type="article"
+        imageUrl={getFullUrl(frontMatter.ogp.url)}
+        width={frontMatter.ogp.width}
+        height={frontMatter.ogp.height}
+        url={getFullUrl(`/archive/${frontMatter.slug}`)}
+      />
       {
         frontMatter.hero && <Hero
           src={frontMatter.hero}
@@ -83,6 +96,11 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
   const source = fs.readFileSync(docFilePath);
   const { content, data } = matter(source);
 
+  const ogp = await generateOgpImage({
+    title: data.title,
+    pubtime: data.pubtime.toISOString(),
+  });
+
   const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [],
@@ -90,13 +108,17 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
     },
     scope: {},
   });
+
   return {
     props: {
       source: mdxSource,
       frontMatter: {
+        slug: params.slug,
         title: data.title,
         pubtime: data.pubtime.toISOString(),
         hero: data.hero || '',
+        ogp: ogp,
+        description: content.substring(0, 30),
       },
     },
   }
@@ -105,7 +127,7 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
 export const getStaticPaths = async () => {
   const paths = DOC_FILE_PATHS
     .map((path) => path.replace(/\.mdx?$/, ''))
-    .map((slug) => ({ params: { slug } }))
+    .map((slug) => ({ params: { slug } }));
 
   return {
     paths,

@@ -7,6 +7,7 @@ const fileName = `${unixtime}.md`;
 const template = `---
 title: Title
 pubtime: ${iso}
+hero:
 ---
 
 hello
