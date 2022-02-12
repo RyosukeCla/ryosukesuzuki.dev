@@ -19,7 +19,7 @@
   filter: contrast(115%) grayscale(90%) saturate(190%);
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 670px) {
   .hero {
     border-radius: 0;
   }
