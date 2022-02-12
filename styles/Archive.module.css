@@ -1,10 +1,10 @@
 .datetime {
   color: var(--main-subdue-color);
-  line-height: 12px;
+  line-height: 14px;
 }
 .goback {
-  line-height: 12px;
-  margin-bottom: 3px;
+  line-height: 14px;
+  margin-bottom: 2px;
   font-family: var(--main-pre-font-family);
 }
 .goback > a {
