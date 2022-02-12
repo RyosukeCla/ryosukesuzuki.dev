@@ -21,15 +21,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <a data-menu>Archive</a>
         </Link>
       </header>
-      <HeadForSEO
-        title="Ryosuke Suzuki"
-        description="Hello! I'm ryosuke suzuki, a software engineer in Tokyo."
-        type="website"
-        url={`${getFullUrl(router.pathname)}`}
-        imageUrl={getFullUrl('/images/ogp-default.png')}
-        width={1000}
-        height={508}
-      />
       <div className={styles.body}>
         <Component {...pageProps} />
       </div>

@@ -9,6 +9,8 @@ import facebookSvg from '../public/svg/facebook.svg';
 import heroImg from '../public/images/hero.jpg';
 import { Hero } from '../components/hero';
 import { getStaticProps as getArchiveStatiProps, Props, Docs } from './archive/index';
+import { HeadForSEO } from '../components/seo';
+import { getFullUrl } from '../utils/url';
 
 const Icon = ({ src, href }: { src: string; href: string }) => {
   return (
@@ -22,6 +24,15 @@ const Icon = ({ src, href }: { src: string; href: string }) => {
 const Home = (props: Props & { hasMore: boolean }) => {
   return (
     <div>
+      <HeadForSEO
+        title="Ryosuke Suzuki"
+        description="Hello! I'm ryosuke suzuki, a software engineer in Tokyo."
+        type="website"
+        url={`${getFullUrl('/')}`}
+        imageUrl={getFullUrl('/images/ogp-default.png')}
+        width={1000}
+        height={508}
+      />
       <Hero
         src={heroImg}
         alt="Me at Fusimi Inari, Kyoto"

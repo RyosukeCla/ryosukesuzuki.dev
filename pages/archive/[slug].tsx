@@ -32,7 +32,6 @@ const Image = ({ src, alt }: { src: string; alt: string }) => {
 }
 
 const MD_COMPONENTS = {
-  Head,
   img: Image
 }
 
@@ -118,7 +117,7 @@ export const getStaticProps = async ({ params }: { params: { slug: string }}) =>
         pubtime: data.pubtime.toISOString(),
         hero: data.hero || '',
         ogp: ogp,
-        description: content.substring(0, 30),
+        description: content.trim().substring(0, 180).replace(/\n/gm, ' '),
       },
     },
   }

@@ -4,6 +4,8 @@ import * as matter from 'gray-matter';
 import Link from 'next/link';
 import styles from '../../styles/Archive.module.css';
 import { formatDate } from '../../utils/format-date';
+import { HeadForSEO } from '../../components/seo';
+import { getFullUrl } from '../../utils/url';
 
 const DOC_FILE_PATH = path.join(process.cwd(), './archives/');
 const DOC_FILE_PATHS = fs
@@ -31,6 +33,15 @@ export type Props = {
 export default function ArchiveListPage({ docs }: Props) {
   return (
     <div>
+      <HeadForSEO
+        title="Archive | Ryosuke Suzuki"
+        description="Here, my archives are placed."
+        type="website"
+        url={`${getFullUrl('/archive')}`}
+        imageUrl={getFullUrl('/images/ogp-default.png')}
+        width={1000}
+        height={508}
+      />
       <h1 data-title>Archive</h1>
       <Docs docs={docs} />
     </div>

@@ -72,6 +72,7 @@ export async function generateOgpImage(args: { title: string, pubtime: string })
     </body>
   </html>`
     });
+    console.log('generated ogp image', outputPath);
   };
   return {
     width: 600,
