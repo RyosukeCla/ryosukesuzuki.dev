@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://www.ryosuskesuzuki.dev',
+  siteUrl: 'https://ryosuskesuzuki.dev',
   generateRobotsTxt: true,
 }
 
