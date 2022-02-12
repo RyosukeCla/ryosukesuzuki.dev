@@ -36,7 +36,7 @@ const Home = (props: Props & { hasMore: boolean }) => {
       <Hero
         src={heroImg}
         alt="Me at Fusimi Inari, Kyoto"
-        loading="eager"
+        loading="lazy"
         filter
       />
       <h1 data-title>Hello!</h1>
