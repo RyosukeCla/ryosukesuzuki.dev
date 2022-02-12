@@ -44,10 +44,9 @@ const Home = (props: Props & { hasMore: boolean }) => {
 
       <h4>Recently</h4>
       <Docs docs={props.docs}/>
-      {props.hasMore && <Link href="/archive">
-        <a data-menu>...more</a>
-      </Link>}
-
+      {props.hasMore && <p><Link href="/archive">
+        <a data-menu>... more</a>
+      </Link></p>}
       <br />
       <div className={styles.links}>
         <Icon src={twitterSvg} href="https://twitter.com/GentleClarinet" />
@@ -61,7 +60,7 @@ const Home = (props: Props & { hasMore: boolean }) => {
 
 export async function getStaticProps() {
   const data = await getArchiveStatiProps();
-  const MAX = 3;
+  const MAX = 5;
   return {
     props: {
       docs: data.props.docs.slice(0, MAX),
