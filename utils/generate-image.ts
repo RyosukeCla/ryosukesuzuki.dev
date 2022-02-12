@@ -57,6 +57,9 @@ export async function generateOgpImage(args: { title: string, pubtime: string })
   const outputPath = path.resolve(OUTPUT_PATH, fileName);
   if (!fs.existsSync(outputPath)) {
     await NodeHtmlToImage({
+      puppeteerArgs: {
+        args: ['--no-sandbox'],
+      } as any,
       output: outputPath,
       selector: 'body',
       html: `
