@@ -29,15 +29,13 @@ export function reportWebVitals({ id, name, label, value }: any) {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PQXG77P4B2" key="gtag" />
-        <Script id="ga" defer strategy="afterInteractive" key="gtag-init" dangerouslySetInnerHTML={{ __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){ dataLayer.push(arguments); }
-          gtag('js', new Date());
-          gtag('config', 'G-PQXG77P4B2');
-        `}} />
-      </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PQXG77P4B2" key="gtag" />
+      <Script id="ga" defer strategy="afterInteractive" key="gtag-init" dangerouslySetInnerHTML={{ __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-PQXG77P4B2');
+      `}} />
       <div className={styles.container}>
         <header className={styles.header}>
           <Link href="/">
