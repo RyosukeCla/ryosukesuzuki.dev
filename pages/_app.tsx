@@ -7,14 +7,20 @@ import { HeadForSEO } from '../components/seo';
 import { getFullUrl } from '../utils/url';
 import Script from 'next/script'
 
+type Window = {
+  gtag?: any;
+}
 export function reportWebVitals({ id, name, label, value }: any) {
-  (window as any).gtag("send", "event", {
-    eventCategory: `${label} metric`,
-    eventAction: name,
-    eventValue: Math.round(name === "CLS" ? value * 1000 : value),
-    eventLabel: id,
-    nonInteraction: true,
-  });
+  if ((window as Window).gtag) {
+    (window as Window).gtag("send", "event", {
+      eventCategory: `${label} metric`,
+      eventAction: name,
+      eventValue: Math.round(name === "CLS" ? value * 1000 : value),
+      eventLabel: id,
+      nonInteraction: true,
+    });
+  }
+
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
