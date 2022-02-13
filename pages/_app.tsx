@@ -20,15 +20,17 @@ export function reportWebVitals({ id, name, label, value }: any) {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PQXG77P4B2" />
-      <Script id="ga" defer strategy="afterInteractive">
-        {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){ dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-PQXG77P4B2');
-        `}
-      </Script>
+      <Head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PQXG77P4B2" />
+        <Script id="ga" defer strategy="afterInteractive">
+          {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){ dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'G-PQXG77P4B2');
+          `}
+        </Script>
+      </Head>
       <div className={styles.container}>
         <header className={styles.header}>
           <Link href="/">
