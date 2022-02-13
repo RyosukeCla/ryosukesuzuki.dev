@@ -9,18 +9,21 @@ import Script from 'next/script'
 
 type Window = {
   gtag?: any;
+  dataLayer?: any[];
 }
 export function reportWebVitals({ id, name, label, value }: any) {
-  if ((window as Window).gtag) {
-    (window as Window).gtag("send", "event", {
-      eventCategory: `${label} metric`,
-      eventAction: name,
-      eventValue: Math.round(name === "CLS" ? value * 1000 : value),
-      eventLabel: id,
-      nonInteraction: true,
-    });
+  let _window = window as Window;
+  _window.dataLayer = _window.dataLayer || [];
+  _window.gtag = _window.gtag || function gtag() {
+    _window.dataLayer?.push(arguments);
   }
-
+  _window.gtag("send", "event", {
+    eventCategory: `${label} metric`,
+    eventAction: name,
+    eventValue: Math.round(name === "CLS" ? value * 1000 : value),
+    eventLabel: id,
+    nonInteraction: true,
+  });
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
