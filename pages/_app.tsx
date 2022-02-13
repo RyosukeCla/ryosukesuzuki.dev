@@ -21,15 +21,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PQXG77P4B2" />
-        <Script id="ga" defer strategy="afterInteractive">
-          {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){ dataLayer.push(arguments); }
-              gtag('js', new Date());
-              gtag('config', 'G-PQXG77P4B2');
-          `}
-        </Script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PQXG77P4B2" key="gtag" />
+        <Script id="ga" defer strategy="afterInteractive" key="gtag-init" dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){ dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', 'G-PQXG77P4B2');
+        `}} />
       </Head>
       <div className={styles.container}>
         <header className={styles.header}>
