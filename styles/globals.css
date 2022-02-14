@@ -58,6 +58,8 @@ pre {
   padding: 16px;
   border-radius: 4px;
   margin: 32px 0;
+  background: var(--main-code-bg-color);
+  color: var(--main-code-color);
 }
 code {
   font-family: var(--main-pre-font-family);
