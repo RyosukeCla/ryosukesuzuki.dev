@@ -28,6 +28,7 @@ const Image = ({ src, alt }: { src: string; alt: string }) => {
       layout="fill"
       loading="lazy"
     />
+    <small>{alt}</small>
   </span>
 }
 

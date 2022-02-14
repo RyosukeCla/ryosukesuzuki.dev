@@ -9,11 +9,11 @@
   margin: 0 -16px;
   position: relative;
   border-radius: 4px;
-  overflow: hidden;
   background: var(--main-code-bg-color);
 }
 .hero img {
   object-fit: cover;
+  border-radius: 4px;
 }
 .hero[data-filter] {
   filter: contrast(115%) grayscale(90%) saturate(190%);

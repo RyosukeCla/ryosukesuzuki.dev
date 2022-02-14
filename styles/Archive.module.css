@@ -20,15 +20,24 @@
 
 .image {
   position: relative;
-  width: 100%;
-  margin: 0;
+  max-width: calc(100%);
+  margin: 24px auto;
+  display: block;
+  border-radius: 4px;
+}
+.image > small {
+  text-align: center;
+  display: block;
+  color: var(--main-subdue-color);
+  margin: 8px 0;
 }
 .image > span {
   position: unset !important;
 }
 .image img {
+  max-height: 400px !important;
   border-radius: 4px;
-  object-fit: cover;
+  object-fit: contain;
   width: 100% !important;
   position: relative !important;
   height: unset !important;
