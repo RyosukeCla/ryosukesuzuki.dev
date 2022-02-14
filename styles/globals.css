@@ -33,6 +33,12 @@ a {
 a[data-header] {
   color: var(--main-text-color);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+a[data-header] svg {
+  margin: -8px 0;
+  margin-right: 8px;
 }
 a[data-menu] {
   color: var(--main-text-color);

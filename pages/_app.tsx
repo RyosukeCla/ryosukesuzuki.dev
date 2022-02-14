@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { HeadForSEO } from '../components/seo';
 import { getFullUrl } from '../utils/url';
 import Script from 'next/script'
+import { Neko } from '../components/neko';
 
 type Window = {
   gtag?: any;
@@ -39,7 +40,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div className={styles.container}>
         <header className={styles.header}>
           <Link href="/">
-            <a data-header>Ryosuke Suzuki</a>
+            <a data-header>
+              <Neko width='20px' height='30px' color='var(--main-text-color)' />
+              Ryosuke Suzuki
+            </a>
           </Link>
           <div className={styles.space} />
           <Link href="/">
