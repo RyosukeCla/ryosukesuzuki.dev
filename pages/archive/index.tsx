@@ -16,13 +16,13 @@ export const Docs = ({ docs }: { docs: Doc[] }) => {
   return <div className={styles.list}>
     {docs.map((doc, key) => {
       return <Link key={key} href={`/archive/${doc.slug}`}>
-          <a className={styles.listitem}>
-            <span>{doc.title}</span>
-            <div className={styles.datetime}>
-              <small>{formatDate(doc.pubtime)}</small>
-            </div>
-          </a>
-        </Link>
+        <a className={styles.listitem}>
+          <span>{doc.title}</span>
+          <div className={styles.datetime}>
+            <small>{formatDate(doc.pubtime)}</small>
+          </div>
+        </a>
+      </Link>
     })}
   </div>
 }
