@@ -81,6 +81,27 @@ pre > code {
   padding: 0;
 }
 
+blockquote {
+  position: relative;
+  margin: 32px 0px;
+  color: var(--main-subdue-color);
+}
+blockquote::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0px;
+  width: 4px;
+  border-radius: 8px;
+  opacity: 0.4;
+  background: var(--main-subdue-color);
+}
+blockquote > * {
+  padding: 16px;
+}
+
 h1 {
   font-size: 32px;
 }
