@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <header className={styles.header}>
           <Link href="/">
             <a data-header>
-              <Neko width='20px' height='30px' color='var(--main-text-color)' />
+              {/* <Neko width='20px' height='30px' color='var(--main-text-color)' /> */}
               Ryosuke Suzuki
             </a>
           </Link>
