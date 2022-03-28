@@ -125,14 +125,21 @@ small {
   font-size: 14px;
 }
 
-ul {
+ul, ol {
   padding-left: 24px;
   margin: 16px 0;
   line-height: 1.7;
   list-style: inside;
 }
 
+ul > li {
+  list-style: disc;
+}
+
+ol > li {
+  list-style: decimal;
+}
+
 li {
   margin: .8px 0;
-  list-style: disc;
 }
