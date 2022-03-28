@@ -132,6 +132,10 @@ ul, ol {
   list-style: inside;
 }
 
+li ol, li ul {
+  margin: 0;
+}
+
 ul > li {
   list-style: disc;
 }
@@ -140,6 +144,15 @@ ol > li {
   list-style: decimal;
 }
 
+ol ol > li {
+  list-style: lower-roman;
+}
+
+ol ol ol > li {
+  list-style: lower-alpha;
+}
+
 li {
   margin: .8px 0;
+  padding-left: 8px;
 }
