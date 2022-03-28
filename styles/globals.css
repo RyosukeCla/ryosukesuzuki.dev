@@ -28,7 +28,7 @@ body {
 
 a {
   color: var(--main-link-color);
-  transition: all 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
 }
 a[data-header] {
   color: var(--main-text-color);
