@@ -46,9 +46,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             </a>
           </Link>
           <div className={styles.space} />
-          <Link href="/">
+          {/* <Link href="/">
             <a data-menu>Hello</a>
-          </Link>
+          </Link> */}
           <Link href="/archive">
             <a data-menu>Archive</a>
           </Link>

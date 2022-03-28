@@ -40,7 +40,7 @@ const Home = (props: Props & { hasMore: boolean }) => {
         filter
       />
       <h1 data-title>Hello!</h1>
-      <p>Ryosuke Suzuki, a software engineer in Tokyo, preferring to work at a startup, enjoying singing, born in 1996.</p>
+      <p>I'm Ryosuke Suzuki, a software engineer in Tokyo, preferring to work at a startup, enjoying singing, born in 1996.</p>
 
       <h4>Recently</h4>
       <Docs docs={props.docs}/>
