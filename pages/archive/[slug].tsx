@@ -54,6 +54,7 @@ export default function Page({ source, frontMatter }: PageProps) {
       await import('prismjs/components/prism-yaml' as string);
       await import('prismjs/components/prism-json' as string);
       await import('prismjs/components/prism-bash' as string);
+      await import('prismjs/components/prism-go' as string);
       Prism.highlightAll();
     }
     init();
